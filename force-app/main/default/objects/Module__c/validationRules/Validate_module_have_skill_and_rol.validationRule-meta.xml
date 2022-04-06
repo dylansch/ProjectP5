@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_module_have_skill_and_rol</fullName>
+    <active>true</active>
+    <description>To activate a module must have skill and role</description>
+    <errorConditionFormula>IF(
+AND(Activate__c,
+OR(ISPICKVAL(Skills__c,&quot;&quot;),
+ISBLANK(Roles__c))),true,false)</errorConditionFormula>
+    <errorMessage>To activate a module must have skill and role</errorMessage>
+</ValidationRule>
